@@ -102,16 +102,18 @@ public class MovieServiceTest {
     @Test
     public void testUpdateMovie() throws SQLException {
         Movie movieToUpdate=movieService.read(1);
-        movieToUpdate.setTitle("New value");
+        String newTitle="New value";
+        movieToUpdate.setTitle(newTitle);
         movieService.update(movieToUpdate);
-        Assert.assertEquals("New value",movieService.read(1).getTitle());
+        Assert.assertEquals(newTitle,movieService.read(1).getTitle());
     }
     
     @Test
     public void testUpdateNotValidMovie() throws SQLException {
         Movie movieToUpdate=movieService.read(1);
         String titleBefore=movieToUpdate.getTitle();
-        movieToUpdate.setTitle("New value");
+        String newTitle="New value";
+        movieToUpdate.setTitle(newTitle);
         movieService.update(movieToUpdate);
         Assert.assertNotEquals(titleBefore,movieService.read(1).getTitle());
     }

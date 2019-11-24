@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/src/test/java/DirectorServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DirectorServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Service/DirectorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Service/DirectorService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/DirectorServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/DirectorServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/MovieServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MovieServiceTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -131,7 +132,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574372657731</updated>
-      <workItem from="1574372661247" duration="34173000" />
+      <workItem from="1574372661247" duration="34435000" />
     </task>
     <servers />
   </component>
