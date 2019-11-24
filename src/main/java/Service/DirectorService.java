@@ -37,7 +37,6 @@ public class DirectorService {
     
     public DirectorService() throws SQLException {
         try {
-          //  dropTable();
             DBConnector.connection.setAutoCommit(false);
             preparedStatement = DBConnector.getPrepraredStatement(CREATE_DIRECTOR_TABLE);
             DBConnector.executeUpdate(preparedStatement);
