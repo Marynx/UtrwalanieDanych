@@ -38,9 +38,9 @@ public class MovieService {
     private final String COUNT_MOVIES_WHERE_DIRECTOR_FROM = "SELECT COUNT(*) FROM MOVIE JOIN DIRECTOR ON MOVIE.DIRECTOR_ID=DIRECTOR.ID" +
                                                             " WHERE DIRECTOR.CITY=(?)";
     
-    private final String LONGEST_MOVIE = "SELECT MAX(LENGTH_IN_MINUTES) FROM MOVIE";
+    private final String LONGEST_MOVIE = "SELECT * FROM MOVIE WHERE LENGTH_IN_MINUTES=(SELECT MAX(LENGTH_IN_MINUTES) FROM MOVIE)";
     
-    private final String READ_OLDEST_MOVIE = "SELECT MIN(RELEASE_DATE) FROM MOVIE";
+    private final String READ_OLDEST_MOVIE = "SELECT * FROM MOVIE WHERE RELEASE_DATE=(SELECT MIN(RELEASE_DATE) FROM MOVIE)";
     
     private final String SUM_ALL_MOVIE_LENGTH = "SELECT SUM(LENGTH_IN_MINUTES) FROM MOVIE";
     
@@ -161,7 +161,7 @@ public class MovieService {
         return result;
     }
     
-    public int update(Movie movie, int id) throws SQLException {
+    public int update(Movie movie) throws SQLException {
         int result = 0;
         try {
             preparedStatement = DBConnector.getPrepraredStatement(UPDATE_MOVIE);
@@ -169,7 +169,7 @@ public class MovieService {
             preparedStatement.setInt(2, movie.getLengthInMinutes());
             preparedStatement.setDate(3, movie.getReleaseDate());
             preparedStatement.setInt(4, movie.getDirector());
-            preparedStatement.setInt(5, id);
+            preparedStatement.setInt(5, movie.getId());
             result = DBConnector.executeUpdate(preparedStatement);
             DBConnector.connection.commit();
         } catch ( SQLException e ) {
@@ -218,7 +218,7 @@ public class MovieService {
         return result;
     }
     
-    public Movie longestMovie(int id) throws SQLException {
+    public Movie longestMovie() throws SQLException {
         Movie movie = new Movie();
         try {
             ResultSet rs = DBConnector.executeQuery(LONGEST_MOVIE);
@@ -281,7 +281,7 @@ public class MovieService {
         return result;
     }
     
-    public void drop_table() throws SQLException, ClassNotFoundException {
+    public void dropTable() throws SQLException, ClassNotFoundException {
         preparedStatement = DBConnector.getPrepraredStatement(DROP_TABLE);
         DBConnector.executeUpdate(preparedStatement);
     }

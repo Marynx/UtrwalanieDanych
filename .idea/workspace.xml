@@ -2,9 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="75dcaf45-48d3-4dbc-bdb4-c457655b6947" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/DirectorServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/MovieServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Domain/Director.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Domain/Director.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Domain/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Domain/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Service/DirectorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Service/DirectorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Service/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Service/MovieService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Domain/Director.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Domain/Director.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Domain/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Domain/Movie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Service/MovieService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Service/MovieService.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,17 +68,63 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+  <component name="RunManager" selected="JUnit.MovieServiceTest">
+    <configuration name="MovieServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uniproject" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MovieServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MovieServiceTest.testAllMovieLength" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uniproject" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MovieServiceTest" />
+      <option name="METHOD_NAME" value="testAllMovieLength" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MovieServiceTest.testAllMovieLengthAfterDeleting" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uniproject" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MovieServiceTest" />
+      <option name="METHOD_NAME" value="testAllMovieLengthAfterDeleting" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MovieServiceTest.testLongestMovieAfterAdding" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uniproject" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MovieServiceTest" />
+      <option name="METHOD_NAME" value="testLongestMovieAfterAdding" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MovieServiceTest.testOldestMovie" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uniproject" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MovieServiceTest" />
+      <option name="METHOD_NAME" value="testOldestMovie" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.MovieServiceTest" />
+        <item itemvalue="JUnit.MovieServiceTest.testAllMovieLengthAfterDeleting" />
+        <item itemvalue="JUnit.MovieServiceTest.testAllMovieLength" />
+        <item itemvalue="JUnit.MovieServiceTest.testOldestMovie" />
+        <item itemvalue="JUnit.MovieServiceTest.testLongestMovieAfterAdding" />
       </list>
     </recent_temporary>
   </component>
@@ -82,7 +138,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574372657731</updated>
-      <workItem from="1574372661247" duration="24490000" />
+      <workItem from="1574372661247" duration="32655000" />
     </task>
     <servers />
   </component>

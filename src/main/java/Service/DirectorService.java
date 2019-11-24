@@ -28,15 +28,16 @@ public class DirectorService {
     private final String READ_DIRECTOR_WITH_ID="SELECT * FROM DIRECTOR WHERE ID=(?)";
     private final String UPDATE_DIRECTOR="UPDATE DIRECTOR SET FIRSTNAME=(?),LASTNAME=(?),CITY=(?),YOB=(?) WHERE ID=(?)";
     private final String DELETE_DIRECTOR="DELETE FROM DIRECTOR WHERE ID=(?)";
-    private final String READ_YOUNGEST_DIRECTOR="SELECT MAX(YOB) FROM DIRECTOR";
+    private final String READ_YOUNGEST_DIRECTOR="SELECT * FROM DIRECTOR WHERE YOB=(SELECT MAX(YOB) FROM DIRECTOR)";
     private final String COUNT_DIRECTOR_MOVIES="SELECT COUNT(*) FROM MOVIE JOIN DIRECTOR " +
-                                               "ON MOVIE.DIRECTOR.ID = DIRECTOR.ID WHERE DIRECTOR.ID=(?)";
+                                               "ON MOVIE.DIRECTOR_ID = DIRECTOR.ID WHERE DIRECTOR.ID=(?)";
     private final String DIRECTOR_AGE="SELECT DATEDIFF(YEAR,YOB, CURRENT_DATE) AS AGE FROM DIRECTOR WHERE ID=(?)";
     
     PreparedStatement preparedStatement = null;
     
     public DirectorService() throws SQLException {
         try {
+          //  dropTable();
             DBConnector.connection.setAutoCommit(false);
             preparedStatement = DBConnector.getPrepraredStatement(CREATE_DIRECTOR_TABLE);
             DBConnector.executeUpdate(preparedStatement);
@@ -148,7 +149,7 @@ public class DirectorService {
         return result;
     }
     
-    public int update(Director director, int id) throws SQLException {
+    public int update(Director director) throws SQLException {
         int result = 0;
         try {
             preparedStatement = DBConnector.getPrepraredStatement(UPDATE_DIRECTOR);
@@ -156,6 +157,7 @@ public class DirectorService {
             preparedStatement.setString(2, director.getLastName());
             preparedStatement.setString(3, director.getCity());
             preparedStatement.setDate(4, director.getYob());
+            preparedStatement.setInt(5, director.getId());
             result = DBConnector.executeUpdate(preparedStatement);
             DBConnector.connection.commit();
         } catch ( SQLException e ) {
@@ -229,7 +231,10 @@ public class DirectorService {
         return result;
     }
     
-    
+    public void dropTable() throws SQLException, ClassNotFoundException {
+        preparedStatement = DBConnector.getPrepraredStatement(DROP_TABLE);
+        DBConnector.executeUpdate(preparedStatement);
+    }
     
     
 }

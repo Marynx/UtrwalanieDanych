@@ -1,6 +1,7 @@
 package Domain;
 
 import java.sql.Date;
+import java.util.Objects;
 
 public class Movie {
     
@@ -76,6 +77,27 @@ public class Movie {
                ", releaseDate=" + releaseDate +
                ", directorId=" + director +
                '}';
+    }
+    
+    @Override
+    public boolean equals(Object o) {
+        if ( this == o ) {
+            return true;
+        }
+        if ( o == null || getClass() != o.getClass() ) {
+            return false;
+        }
+        Movie movie = (Movie) o;
+        return id == movie.id &&
+               lengthInMinutes == movie.lengthInMinutes &&
+               director == movie.director &&
+               Objects.equals(title, movie.title) &&
+               Objects.equals(releaseDate, movie.releaseDate);
+    }
+    
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, lengthInMinutes, releaseDate, director);
     }
     
 }

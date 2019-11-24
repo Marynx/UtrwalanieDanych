@@ -1,6 +1,7 @@
 package Domain;
 
 import java.sql.Date;
+import java.util.Objects;
 
 public class Director {
     
@@ -69,6 +70,27 @@ public class Director {
                ", city='" + city + '\'' +
                ", yob=" + yob +
                '}';
+    }
+    
+    @Override
+    public boolean equals(Object o) {
+        if ( this == o ) {
+            return true;
+        }
+        if ( o == null || getClass() != o.getClass() ) {
+            return false;
+        }
+        Director director = (Director) o;
+        return id == director.id &&
+               Objects.equals(firstName, director.firstName) &&
+               Objects.equals(lastName, director.lastName) &&
+               Objects.equals(city, director.city) &&
+               Objects.equals(yob, director.yob);
+    }
+    
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstName, lastName, city, yob);
     }
     
 }
