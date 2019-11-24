@@ -10,6 +10,8 @@ public class Director {
     private String city;
     private Date yob;
     
+    public Director(){}
+    
     public Director(int id, String firstName, String lastName, String city, Date yob) {
         this.id = id;
         this.firstName = firstName;
